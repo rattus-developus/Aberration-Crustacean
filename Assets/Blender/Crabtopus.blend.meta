@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b615495074b7fd24db56d5d4fe1a84c0
+guid: 0a5fdb43b3db25f4c824e366f299e744
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle1
+      name: Idle
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 5
@@ -62,7 +62,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle2
+      name: Walk
       takeName: Scene
       internalID: -8800838248204228948
       firstFrame: 70
@@ -91,11 +91,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle3
+      name: Attack
       takeName: Scene
       internalID: -491678979986718739
       firstFrame: 135
-      lastFrame: 195
+      lastFrame: 165
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
