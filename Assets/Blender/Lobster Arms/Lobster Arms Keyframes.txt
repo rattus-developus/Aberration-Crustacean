@@ -1,0 +1,24 @@
+Blank Arns:
+
+5-65: Idle
+70-100: Punch/Equip (Sawp at keyframe 80)
+
+
+
+Lobster Arms:
+5-35: Equip (start fully extendied to transition from blank punch)
+40-100: Idle
+105-135: Punch
+140-145: Unequip (align with blank arms first keyframe of idle)
+
+
+
+
+
+Equip System:
+
+Punch an item with an empty hand to equip item
+(item will start in blank arm fully extended position)
+
+Hold control and click left/right to drop equipped item
+(can only be done in idle and will move equipped arm to starting state for blank arm then swap to blank arm prefab)
