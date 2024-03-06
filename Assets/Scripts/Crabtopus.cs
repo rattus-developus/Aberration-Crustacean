@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Crabtopus : MonoBehaviour
+public class Crabtopus : Enemy
 {
+    [SerializeField] BoxCollider attackBox;
     NavMeshAgent agent;
     Transform playerTran;
     Animator anim;
@@ -16,8 +17,10 @@ public class Crabtopus : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    override public void Update()
     {
+        base.Update();
+
         if(Vector3.Distance(transform.position, playerTran.position) <= agent.stoppingDistance)
         {
             anim.SetBool("walk", false);
@@ -30,9 +33,24 @@ public class Crabtopus : MonoBehaviour
         }
         
         //Set Destination
-        if(Vector3.Distance(agent.destination, playerTran.position) >= 0.1f && Vector3.Distance(transform.position, playerTran.position) >= agent.stoppingDistance)
+        if(agent.enabled)
         {
-            agent.SetDestination(playerTran.position);
+            if(Vector3.Distance(agent.destination, playerTran.position) >= 0.1f && Vector3.Distance(transform.position, playerTran.position) >= agent.stoppingDistance)
+            {
+                agent.SetDestination(playerTran.position);
+            }
+        }
+    }
+
+    public void Attack()
+    {
+        LayerMask mask = 1 << 6;
+
+        Vector3 size = new Vector3(attackBox.size.x * attackBox.transform.localScale.x * 2, attackBox.size.y * attackBox.transform.localScale.y * 2, attackBox.size.z * attackBox.transform.localScale.z * 2);
+        Collider[] hitColliders = Physics.OverlapBox(attackBox.transform.position, size, transform.rotation, mask);
+        if(hitColliders.Length > 0)
+        {
+            hitColliders[0].GetComponent<CharacterHealthManager>().TakeHit(damage);
         }
     }
 }

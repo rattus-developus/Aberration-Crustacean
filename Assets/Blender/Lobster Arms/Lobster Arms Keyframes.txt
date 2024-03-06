@@ -1,7 +1,7 @@
 Blank Arns:
 
 5-65: Idle
-70-100: Punch/Equip (Sawp at keyframe 80)
+70-100: Punch/Equip (Swap at keyframe 80)
 
 
 
@@ -9,7 +9,7 @@ Lobster Arms:
 5-35: Equip (start fully extendied to transition from blank punch)
 40-100: Idle
 105-135: Punch
-140-145: Unequip (align with blank arms first keyframe of idle)
+140-145: Drop (align with blank arms first keyframe of idle)
 
 
 
