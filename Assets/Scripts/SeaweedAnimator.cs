@@ -7,7 +7,9 @@ public class SeaweedAnimator : MonoBehaviour
     void Start()
     {
         float randomRotation = Random.Range(0f, 360f);
-        transform.Rotate(0, randomRotation, 0f);
+        float randomRotationX = Random.Range(0f, 10f);
+        float randomRotationZ = Random.Range(0f, 10f);
+        transform.Rotate(randomRotationX, randomRotation, randomRotationZ);
 
         StartCoroutine(StartAnimationCoroutine());
     }

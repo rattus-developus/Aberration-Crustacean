@@ -7,11 +7,32 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxHealth;
     [SerializeField] float health;
     [SerializeField] protected float damage;
+    [SerializeField] int coinsToDrop;
+    [SerializeField] float coinsRandomOffset = 0.2f;
+    [SerializeField] GameObject coinPrefab;
 
     virtual public void Update()
     {
         if(health <= 0f)
         {
+            //Death
+            for(int i = 0; i < coinsToDrop; i++)
+            {
+                float randomOffsetX = Random.Range(-coinsRandomOffset, coinsRandomOffset);
+                float randomOffsetY = Random.Range(-coinsRandomOffset, coinsRandomOffset);
+                float randomOffsetZ = Random.Range(-coinsRandomOffset, coinsRandomOffset);
+                Vector3 randomOffset = new Vector3(randomOffsetX, randomOffsetY + 0.5f, randomOffsetZ);
+
+                float randomRotationX = Random.Range(0f, 360f);
+                float randomRotationY = Random.Range(0f, 360f);
+                float randomRotationZ = Random.Range(0f, 360f);
+                Quaternion randomRotation = Quaternion.Euler(randomRotationX, randomRotationY, randomRotationZ);
+
+                GameObject coin = Instantiate(coinPrefab);
+                coin.transform.position = transform.position + randomOffset;
+                coin.transform.rotation = randomRotation;
+            }
+
             Destroy(gameObject);
         }
     }

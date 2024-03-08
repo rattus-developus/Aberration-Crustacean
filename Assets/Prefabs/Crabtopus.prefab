@@ -522,6 +522,10 @@ MonoBehaviour:
   maxHealth: 50
   health: 50
   damage: 20
+  coinsToDrop: 3
+  coinsRandomOffset: 0.25
+  coinPrefab: {fileID: 5581945358943020436, guid: f089b546526d4e64a97186c0bbb8636a,
+    type: 3}
   attackBox: {fileID: 6917986934733003749}
 --- !u!114 &7469540160450613491
 MonoBehaviour:
@@ -538,8 +542,6 @@ MonoBehaviour:
   model: {fileID: 621284137749468945}
   flashMat: {fileID: 2100000, guid: 4169eaa2310850644af9c90f21e2d241, type: 2}
   flashTime: 0.05
-  kbTime: 0.25
-  kbSpeed: 1
 --- !u!1 &1288508020256187599
 GameObject:
   m_ObjectHideFlags: 0
