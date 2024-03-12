@@ -8,4 +8,12 @@ public class Pickup : MonoBehaviour
     public int pickupIndex;
     public float maxDurability = 100;
     public float durability = 100;
+
+    void Update()
+    {
+        if(transform.position.y <= -50f)
+        {
+            transform.position = new Vector3(0f, 50f, 0f);
+        }
+    }
 }

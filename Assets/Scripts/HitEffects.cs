@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class HitEffects : MonoBehaviour
 {
     [SerializeField] GameObject model;
-    [SerializeField] Material flashMat;
+    [SerializeField] Material flashMat; 
     Material defaultMat;
     [SerializeField] float flashTime = 0.05f;
     float flashTimer;
@@ -32,6 +32,8 @@ public class HitEffects : MonoBehaviour
 
     public void Knockback(Vector3 direction, float speed, float time)
     {
+        if(time == 0) return;
+
         if(isMoving && kbSpeed > speed);
         else kbSpeed = speed;
 
@@ -43,7 +45,7 @@ public class HitEffects : MonoBehaviour
 
         isMoving = true;
         kbDirection = direction.normalized;
-        kbTimer = kbTime;
+        kbTimer = time;
     }
 
     void Update()

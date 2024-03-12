@@ -61,6 +61,7 @@ public class CharacterCombatManager : MonoBehaviour
             if(col.transform.GetComponent<Enemy>() != null)
             {
                 loseDurability = true;
+                Debug.Log("hit");
 
                 if(isLeft)
                 {
@@ -68,7 +69,7 @@ public class CharacterCombatManager : MonoBehaviour
                 }
                 else
                 {
-                    col.transform.GetComponent<Enemy>().TakeHit(armDamages[armsManager.equippedArmRight], armKnockbacks[armsManager.equippedArmLeft], armKnockbackTimes[armsManager.equippedArmLeft], cam);
+                    col.transform.GetComponent<Enemy>().TakeHit(armDamages[armsManager.equippedArmRight], armKnockbacks[armsManager.equippedArmRight], armKnockbackTimes[armsManager.equippedArmRight], cam);
                 }
             }
         }

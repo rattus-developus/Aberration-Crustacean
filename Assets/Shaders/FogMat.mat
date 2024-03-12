@@ -42,7 +42,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fog_Multiplier: 1.5
+    - _Fog_Multiplier: 2.5
     m_Colors:
     - _Fog_Color: {r: 0.37647063, g: 0.65882355, b: 0.6901961, a: 1}
   m_BuildTextureStacks: []
