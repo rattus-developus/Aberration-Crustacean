@@ -10,6 +10,9 @@ public class CharacterHealthManager : MonoBehaviour
     [SerializeField] float health = 100;
     [SerializeField] float regenDelay;
     [SerializeField] float regenSpeed;
+
+    [SerializeField] AudioSource hurtSound;
+
     float timeSinceLastHit;
     Volume volume;
 
@@ -22,6 +25,9 @@ public class CharacterHealthManager : MonoBehaviour
     {
         health -= damage;
         timeSinceLastHit = 0f;
+
+        hurtSound.pitch = Random.Range(0.9f, 1.1f);
+        hurtSound.Play();
 
         if(health <= 0f)
         {

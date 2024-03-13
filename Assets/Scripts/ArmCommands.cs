@@ -23,4 +23,9 @@ public class ArmCommands : MonoBehaviour
     {
         transform.parent.parent.GetComponent<CharacterCombatManager>().Attack(isLeftArm);
     }
+
+    public void PlaySwing()
+    {
+        transform.parent.parent.GetComponent<ArmsManager>().PlaySwing(isLeftArm);
+    }
 }

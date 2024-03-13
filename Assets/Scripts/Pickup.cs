@@ -9,6 +9,10 @@ public class Pickup : MonoBehaviour
     public float maxDurability = 100;
     public float durability = 100;
 
+
+    public bool isStoreItem;
+    public int price;
+
     void Update()
     {
         if(transform.position.y <= -50f)

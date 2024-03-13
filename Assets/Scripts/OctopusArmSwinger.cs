@@ -11,7 +11,7 @@ public class OctopusArmSwinger : MonoBehaviour
     bool swinging;
 
     void Awake()
-    {
+    { 
         hitTimer = hitCooldown;
     }
 
@@ -31,6 +31,7 @@ public class OctopusArmSwinger : MonoBehaviour
             if(hitTimer <= 0)
             {
                 //Do hit
+                GetComponent<ArmCommands>().PlaySwing();
                 GetComponent<ArmCommands>().Attack();
                 hitTimer = hitCooldown;
             }

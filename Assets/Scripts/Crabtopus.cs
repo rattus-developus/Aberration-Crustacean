@@ -10,6 +10,12 @@ public class Crabtopus : Enemy
     Transform playerTran;
     Animator anim;
 
+    [SerializeField] AudioSource walkAudio;
+    [SerializeField] float walkPlayCooldown = 0.75f;
+    float walkPlayCooldownTimer;
+
+    [SerializeField] float rotSpeed = 5f;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -20,6 +26,27 @@ public class Crabtopus : Enemy
     override public void Update()
     {
         base.Update();
+        if(!landed) return;
+
+        if(Vector3.Distance(agent.destination, transform.position) > agent.stoppingDistance + 1f && walkPlayCooldownTimer <= 0f)
+        {
+            //let audio play
+            walkAudio.pitch = Random.Range(0.9f, 1.1f);
+            walkPlayCooldownTimer = walkPlayCooldown;
+            walkAudio.Play();
+        }
+        else
+        {
+            walkPlayCooldownTimer -= Time.deltaTime;
+        }
+
+        if(Vector3.Distance(agent.destination, transform.position) < agent.stoppingDistance)
+        {
+            Vector3 lookPos = agent.destination - transform.position;
+            lookPos.y = 0;
+            Quaternion rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotSpeed);
+        }
 
         if(Vector3.Distance(transform.position, playerTran.position) <= agent.stoppingDistance)
         {

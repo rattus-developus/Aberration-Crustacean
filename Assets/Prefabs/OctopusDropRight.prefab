@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 3117841492045539867}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.000000059604645, w: 0.70710677}
-  m_LocalPosition: {x: 47.4, y: 10.9, z: -33}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.12500001, y: 0.12500001, z: 0.124999985}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -115,6 +115,8 @@ MonoBehaviour:
   pickupIndex: 2
   maxDurability: 75
   durability: 75
+  isStoreItem: 0
+  price: 0
 --- !u!65 &3458010888930011003
 BoxCollider:
   m_ObjectHideFlags: 0

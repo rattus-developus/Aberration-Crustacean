@@ -1080,6 +1080,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6699134247031390558}
     m_Modifications:
+    - target: {fileID: 2745226670947464955, guid: edeeeceb046005e45891f62e8d42c74c,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643203243812166268, guid: edeeeceb046005e45891f62e8d42c74c,
         type: 3}
       propertyPath: m_LocalPosition.x

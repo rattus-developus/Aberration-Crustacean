@@ -7,6 +7,7 @@ public class CharacterCoinManager : MonoBehaviour
 {
     public int coins = 0;
     TMP_Text coinsText;
+    [SerializeField] AudioSource coinAudio;
 
     void Awake()
     {
@@ -16,6 +17,8 @@ public class CharacterCoinManager : MonoBehaviour
     public void GetCoin()
     {
         coins += 1;
+        coinAudio.pitch = Random.Range(0.9f, 1.1f);
+        coinAudio.Play();
     }
 
     public void AttemptPurchase(int price)

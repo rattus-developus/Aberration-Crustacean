@@ -11,6 +11,8 @@ public class CharacterCombatManager : MonoBehaviour
     [SerializeField] float[] armKnockbacks;
     [SerializeField] float[] armKnockbackTimes;
 
+    [SerializeField] AudioSource purchaseAudio;
+
     public void Attack(bool isLeft)
     {
         if(isLeft)
@@ -45,6 +47,17 @@ public class CharacterCombatManager : MonoBehaviour
         {
             if(col.transform.GetComponent<Pickup>() != null)
             {
+                if(col.transform.GetComponent<Pickup>().isStoreItem && col.transform.GetComponent<Pickup>().price > GetComponent<CharacterCoinManager>().coins)
+                {
+                    return;
+                }
+                else if(col.transform.GetComponent<Pickup>().isStoreItem)
+                {
+                    GetComponent<CharacterCoinManager>().coins -= col.transform.GetComponent<Pickup>().price;
+                    purchaseAudio.pitch = Random.Range(0.9f, 1.1f);
+                    purchaseAudio.Play();
+                }
+
                 if((armsManager.equippedArmLeft != 0 && isLeft) || (armsManager.equippedArmRight != 0 && !isLeft))
                 {
                     return;

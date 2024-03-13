@@ -72,7 +72,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.059649117
+      - time: 0.05293771
         functionName: EndSwinging
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: cc5d8a3265728474587f473d3e60bdb1,
@@ -109,7 +109,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.329894
+      - time: 0.31311548
         functionName: Attack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: e122e5321d06d404e80e4347154e6b17,
@@ -117,10 +117,18 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.34228188
+      - time: 0.31879196
         functionName: PlayEffect
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: de924841f000a6145af376ee5376acd2,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.32550335
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122e5321d06d404e80e4347154e6b17,
           type: 3}
         floatParameter: 0
         intParameter: 0

@@ -11,6 +11,8 @@ public class ArmsManager : MonoBehaviour
     public GameObject spawnedArmLeft;
     public GameObject spawnedArmRight;
     [SerializeField] Transform cam;
+
+    [SerializeField] AudioSource[] swingSources;
     
     public void EquipArm(bool left, int newArmIndex, float durability)
     {
@@ -63,6 +65,20 @@ public class ArmsManager : MonoBehaviour
         else
         {
             EquipArm(false, 0, -1);
+        }
+    }
+
+    public void PlaySwing(bool isLeft)
+    {
+        if(isLeft)
+        {
+            swingSources[equippedArmLeft].pitch = Random.Range(0.9f, 1.1f);
+            swingSources[equippedArmLeft].Play();
+        }
+        else
+        {
+            swingSources[equippedArmRight].pitch = Random.Range(0.9f, 1.1f);
+            swingSources[equippedArmRight].Play();
         }
     }
 }

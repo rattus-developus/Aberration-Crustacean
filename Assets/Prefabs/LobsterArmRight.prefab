@@ -278,12 +278,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d4e84218d97748a370a9f1f3abe98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeft: 0
   model: {fileID: 5108631276286078498}
   pickup: {fileID: 3173130493288553609}
   mats:
   - {fileID: 2100000, guid: ed24a36b03fc5b34a924d22596bc38a2, type: 2}
   - {fileID: 2100000, guid: b17f15e2897ca1f44a17822a47e271d8, type: 2}
   - {fileID: 2100000, guid: 272168556b9272144bc2850118056f50, type: 2}
+  currentMat: {fileID: 0}
 --- !u!1 &2857678149569749275
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +788,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2725829690577646820, guid: aef661dc518078e469b4a87b4972a152,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6584900390866713359, guid: aef661dc518078e469b4a87b4972a152,
         type: 3}
       propertyPath: m_Layer
@@ -840,6 +847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8174645125749007214, guid: aef661dc518078e469b4a87b4972a152,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

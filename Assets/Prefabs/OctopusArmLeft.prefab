@@ -1713,6 +1713,11 @@ PrefabInstance:
       propertyPath: maxDurability
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 8751058862454169757, guid: b5bec78c17ae2a54087ec9574e3643a5,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

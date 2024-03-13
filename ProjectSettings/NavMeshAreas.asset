@@ -95,7 +95,7 @@ NavMeshProjectSettings:
     agentHeight: 8
     agentSlope: 45
     agentClimb: 4.1
-    ledgeDropHeight: 1
+    ledgeDropHeight: 100
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
@@ -113,7 +113,7 @@ NavMeshProjectSettings:
     agentHeight: 3.1
     agentSlope: 45
     agentClimb: 3
-    ledgeDropHeight: 2
+    ledgeDropHeight: 100
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0

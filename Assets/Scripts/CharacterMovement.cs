@@ -14,6 +14,11 @@ public class CharacterMovement : MonoBehaviour
     float xRotation;
     Vector3 velocity;
 
+    [SerializeField] AudioSource walkAudio;
+    [SerializeField] float walkPlayCooldown = 0.75f;
+    [SerializeField] float walkPlayCooldownSprinting = 0.5f;
+    float walkPlayCooldownTimer;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -39,7 +44,32 @@ public class CharacterMovement : MonoBehaviour
 
         move = ((transform.right * x + transform.forward * z) * speed) * Time.deltaTime;
 
-        if(Input.GetKey(KeyCode.LeftShift)) move *= sprintMult;
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            move *= sprintMult;
+        }
+
+        if(controller.isGrounded && move.magnitude > 0 && walkPlayCooldownTimer <= 0f)
+        {
+            //let audio play
+            walkAudio.pitch = Random.Range(0.9f, 1.1f);
+
+            if(Input.GetKey(KeyCode.LeftShift))
+            {
+                walkAudio.pitch += 0.1f;
+                walkPlayCooldownTimer = walkPlayCooldownSprinting;
+            }
+            else
+            {
+                walkPlayCooldownTimer = walkPlayCooldown;
+            }
+
+            walkAudio.Play();
+        }
+        else
+        {
+            walkPlayCooldownTimer -= Time.deltaTime;
+        }
 
         //Jump
         if(Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)

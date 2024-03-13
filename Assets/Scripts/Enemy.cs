@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] float fallSpeed = 75f;
+    [SerializeField] float height = 10f;
+    [SerializeField] LayerMask landedMask;
+    protected bool landed;
+
     [SerializeField] float maxHealth;
     [SerializeField] float health;
     [SerializeField] protected float damage;
@@ -13,11 +19,37 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int weaponDropChance;
     [SerializeField] protected GameObject weaponToDrop;
 
+    [SerializeField] AudioSource hurtSound;
+    [SerializeField] AudioSource impactSound;
+    [SerializeField] AudioSource attackSound;
+
+    virtual public void PlayAttackSound()
+    {
+        attackSound.pitch = Random.Range(0.9f, 1.1f);
+        attackSound.Play();
+    }
+
     virtual public void Update()
     {
+        if(!landed && Physics.Raycast(transform.position, Vector3.down, height, landedMask))
+        {
+            impactSound.pitch = Random.Range(0.9f, 1.1f);
+            impactSound.Play();
+            landed = true;
+            GetComponent<NavMeshAgent>().enabled = true;
+        }
+
+        if(!landed)
+        {
+            transform.position -= new Vector3(0f, fallSpeed * Time.deltaTime, 0f);
+            return;
+        }
+
         if(health <= 0f)
         {
             //Death
+            GameObject.Find("WaveManager").GetComponent<WaveManager>().enemyCount--;
+
             for(int i = 0; i < coinsToDrop; i++)
             {
                 float randomOffsetX = Random.Range(-coinsRandomOffset, coinsRandomOffset);
@@ -63,5 +95,8 @@ public class Enemy : MonoBehaviour
         health -= damage;
         GetComponent<HitEffects>().Flash();
         GetComponent<HitEffects>().Knockback(kbDir, kbSpeed, kbTime);
+
+        hurtSound.Play();
+        hurtSound.pitch = Random.Range(0.9f, 1.1f);
     }
 }
