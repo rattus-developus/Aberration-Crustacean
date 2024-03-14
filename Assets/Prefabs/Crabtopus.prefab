@@ -339,7 +339,8 @@ AudioSource:
   m_GameObject: {fileID: 935792807234607483}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 359efe69f02b6df4680a0edec03d20f0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -604,7 +605,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 8
-  m_Speed: 12
+  m_Speed: 11
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -672,6 +673,7 @@ MonoBehaviour:
   attackBox: {fileID: 6917986934733003749}
   walkAudio: {fileID: 965262453211026153}
   walkPlayCooldown: 0.2
+  rotSpeed: 5
 --- !u!114 &7469540160450613491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,7 +1377,8 @@ AudioSource:
   m_GameObject: {fileID: 3149312067318101534}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 8b128498c0a37ea4da5b60496f6f4c3e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2110,7 +2113,8 @@ AudioSource:
   m_GameObject: {fileID: 5127615735989719250}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: d281e948e03502c48aa6c5892c47c5ee, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3034,7 +3038,8 @@ AudioSource:
   m_GameObject: {fileID: 8063302458930545241}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: d2e744564bab14242abd49c2089d623e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3046,7 +3051,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 7
-  MaxDistance: 100
+  MaxDistance: 75
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

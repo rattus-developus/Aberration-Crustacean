@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour
     public int pickupIndex;
     public float maxDurability = 100;
     public float durability = 100;
+    public Renderer dropRenderer;
 
 
     public bool isStoreItem;

@@ -37,6 +37,8 @@ public class StoreManager : MonoBehaviour
 
     public void LowerStore()
     {
+        if(lowering || transform.position == loweredPos) return;
+
         storeMusic.Play();
 
         RefreshItems();
@@ -46,6 +48,7 @@ public class StoreManager : MonoBehaviour
 
     public void RaiseStore()
     {
+        if(raising || transform.position == raisedPos) return;
         GetComponent<Collider>().enabled = false;
         slot1Tran.GetChild(0).GetComponent<Collider>().enabled = false;
         slot2Tran.GetChild(0).GetComponent<Collider>().enabled = false;

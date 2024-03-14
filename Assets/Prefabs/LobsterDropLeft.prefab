@@ -97,8 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 1750445267621044717}
   pickupIndex: 1
-  maxDurability: 1e+9
-  durability: 1e+9
+  maxDurability: 100
+  durability: 100
+  dropRenderer: {fileID: 1750445267621044717}
   isStoreItem: 0
   price: 15
 --- !u!1 &9038517902385805839

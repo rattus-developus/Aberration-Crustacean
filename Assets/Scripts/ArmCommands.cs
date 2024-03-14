@@ -16,6 +16,10 @@ public class ArmCommands : MonoBehaviour
         dropArm.SetActive(true);
         dropArm.GetComponent<Pickup>().renderer.material = GetComponent<ArmDurabilityManager>().currentMat;
         dropArm.transform.SetParent(null);
+
+        dropArm.GetComponent<Pickup>().dropRenderer.material = GetComponent<ArmDurabilityManager>().currentMat;
+
+
         dropArm.GetComponent<Rigidbody>().isKinematic = false;
     }
 

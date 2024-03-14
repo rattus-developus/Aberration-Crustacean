@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300f666761b7ff942aa60c485221b20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  renderer: {fileID: 5318882040217486585}
   pickupIndex: 3
   maxDurability: 40
   durability: 40
+  dropRenderer: {fileID: 5318882040217486585}
   isStoreItem: 0
   price: 50
 --- !u!65 &7141543700099835198

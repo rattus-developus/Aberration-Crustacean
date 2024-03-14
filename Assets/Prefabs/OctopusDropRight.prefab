@@ -115,6 +115,7 @@ MonoBehaviour:
   pickupIndex: 2
   maxDurability: 75
   durability: 75
+  dropRenderer: {fileID: 7596367273230864944}
   isStoreItem: 0
   price: 0
 --- !u!65 &3458010888930011003

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] float sens = 3f;
+    public float sens = 3f;
     [SerializeField] float speed = 10f;
     [SerializeField] float sprintMult = 1.5f;
     [SerializeField] GameObject cam;

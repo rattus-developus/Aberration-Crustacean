@@ -13,6 +13,7 @@ public class Sheel : Enemy
     [SerializeField] float hitboxSize = 1f;
     [SerializeField] VisualEffect zapVFX;
     [SerializeField] Transform vfxStart;
+    [SerializeField] float rotSpeed = 3f;
 
     void Awake()
     {
@@ -24,6 +25,17 @@ public class Sheel : Enemy
     override public void Update()
     {
         base.Update();
+
+        if(!landed) return;
+
+        if(Vector3.Distance(agent.destination, transform.position) < agent.stoppingDistance + 1)
+        {
+            Vector3 lookPos = playerTran.position - transform.position;
+            //Vector3 lookPos = transform.position - agent.destination;
+            lookPos.y = 0;
+            Quaternion rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotSpeed);
+        }
 
         if(Vector3.Distance(transform.position, playerTran.position) <= agent.stoppingDistance)
         {

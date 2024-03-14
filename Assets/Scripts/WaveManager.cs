@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +18,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Vector2 xBounds;
     [SerializeField] Vector2 zBounds;
     [SerializeField] float spawnHeight;
+
+    [SerializeField] GameObject winText;
     
     [SerializeField] float spawnDelay = 1f;
     float spawnDelayTimer;
@@ -32,13 +33,18 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
+        if(currentWave >= 12) winText.SetActive(true);
+
         if(fighting)
         {
+            if(storeManager.transform.position.y < 100f && currentWave != 0) storeManager.RaiseStore();
+
             enemyCountText.text = enemyCount.ToString();
             waveSliderImage.fillAmount = enemyCount / totalEnemiesThisWave;
         }
         else
         {
+            if(storeManager.transform.position.y > 100f && currentWave != 0) storeManager.LowerStore();
             enemyCountText.text = "$$$";
             waveSliderImage.fillAmount = startDelayTimer / startDelay;
         }

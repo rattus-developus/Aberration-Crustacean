@@ -257,9 +257,10 @@ MonoBehaviour:
   hurtSound: {fileID: 8237645648161879253}
   impactSound: {fileID: 3863204736109799264}
   attackSound: {fileID: 2861179784469352144}
-  hitboxSize: 1
+  hitboxSize: 2.5
   zapVFX: {fileID: 4850800128063626532}
   vfxStart: {fileID: 2722877096036928659}
+  rotSpeed: 3
 --- !u!65 &2653861528849291080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -354,7 +355,8 @@ AudioSource:
   m_GameObject: {fileID: 1865030434140965382}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: ccef092c3c147ab4091c249ed16a3178, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -657,7 +659,8 @@ AudioSource:
   m_GameObject: {fileID: 2668987585944197556}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 8b128498c0a37ea4da5b60496f6f4c3e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -785,7 +788,8 @@ AudioSource:
   m_GameObject: {fileID: 2957136829170035922}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 07ad1c5064cc1fc43bfb7c6af0ee7303,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: d281e948e03502c48aa6c5892c47c5ee, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

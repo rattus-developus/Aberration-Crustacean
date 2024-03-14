@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class CharacterHealthManager : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class CharacterHealthManager : MonoBehaviour
 
         if(health <= 0f)
         {
-            Debug.Log("Game over");
+            GameObject.Find("GameCanvas").GetComponent<Pause>().Die();
         }
     }
 

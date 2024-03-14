@@ -34,11 +34,13 @@ public class HitEffects : MonoBehaviour
     {
         if(time == 0) return;
 
-        if(isMoving && kbSpeed > speed);
+        if(isMoving && kbSpeed < speed);
         else kbSpeed = speed;
 
-        if(isMoving && kbTime > time);
+        if(isMoving && kbTime < time);
         else kbTime = time;
+
+        
 
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Animator>().enabled = false;

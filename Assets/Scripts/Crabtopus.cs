@@ -40,9 +40,10 @@ public class Crabtopus : Enemy
             walkPlayCooldownTimer -= Time.deltaTime;
         }
 
-        if(Vector3.Distance(agent.destination, transform.position) < agent.stoppingDistance)
+        if(Vector3.Distance(agent.destination, transform.position) < agent.stoppingDistance + 1)
         {
-            Vector3 lookPos = agent.destination - transform.position;
+            Vector3 lookPos = playerTran.position - transform.position;
+            //Vector3 lookPos = transform.position - agent.destination;
             lookPos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotSpeed);
